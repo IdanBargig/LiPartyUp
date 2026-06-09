@@ -3,256 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="פורטל המועדונים והאירועים המוביל בישראל - כרטיסים, מסיבות ואירועים חמים.">
+    <meta name="description" content="האתר החדש שלי - פתרונות מתקדמים ומקצועיים במקום אחד.">
     <meta name="robots" content="index, follow">
-    <title>מועדונים ואירועים | המסיבות הכי חמות</title>
-
+    <title>האתר החדש שלי | דף הבית</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
+        /* איפוס הגדרות בסיסי ופונט */
         *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Heebo',sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Heebo', sans-serif;
         }
 
-        body{
-            background:#0f172a;
-            color:white;
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
         }
 
-        header{
-            text-align:center;
-            padding:40px 20px;
-            background:linear-gradient(135deg,#7c3aed,#2563eb);
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        header h1{
-            font-size:40px;
-            margin-bottom:10px;
+        /* תפריט ניווט */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header p{
-            opacity:0.9;
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
         }
 
-        .container{
-            max-width:1400px;
-            margin:auto;
-            padding:30px;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
         }
 
-        .clubs-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-            gap:25px;
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
         }
 
-        .club-card{
-            background:#1e293b;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 10px 25px rgba(0,0,0,0.4);
-            transition:0.3s;
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
 
-        .club-card:hover{
-            transform:translateY(-8px);
+        /* אזור ראשי - Hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f5f3ff, #e0e7ff);
         }
 
-        .club-image{
-            width:100%;
-            height:250px;
-            object-fit:cover;
-            background: #334155; /* צבע רקע זמני למקרה שהתמונה לא נטענת */
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #0f172a;
         }
 
-        .club-content{
-            padding:20px;
+        .hero p {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 30px;
         }
 
-        .club-title{
-            font-size:28px;
-            margin-bottom:10px;
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+            transition: 0.3s;
         }
 
-        .club-description{
-            color:#cbd5e1;
-            margin-bottom:20px;
-            line-height:1.7;
+        .cta-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
         }
 
-        .info{
-            display:grid;
-            gap:10px;
-            margin-bottom:20px;
+        /* אזור תוכן / שירותים */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
         }
 
-        .info-item{
-            display:flex;
-            justify-content:space-between;
-            background:#334155;
-            padding:10px;
-            border-radius:10px;
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            position: relative;
         }
 
-        .buttons{
-            display:flex;
-            gap:10px;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
-        .btn{
-            flex:1;
-            text-align:center;
-            text-decoration:none;
-            padding:14px;
-            border-radius:12px;
-            font-weight:bold;
-            transition:0.3s;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .whatsapp{
-            background:#25D366;
-            color:white;
+        .service-card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
         }
 
-        .whatsapp:hover{
-            background:#1ebe5b;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
-        .booking{
-            background:#3b82f6;
-            color:white;
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
-        .booking:hover{
-            background:#2563eb;
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
         }
 
-        footer{
-            text-align:center;
-            padding:30px;
-            margin-top:30px;
-            color:#94a3b8;
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* אזור יצירת קשר */
+        .contact-section {
+            background: var(--bg-light);
+            padding: 80px 20px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* פוטר תחתון */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        /* התאמה לניידים */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 34px; }
+            .nav-links { display: none; } /* במציאות כאן בונים תפריט המבורגר עם JS */
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>🎉 מועדונים ואירועים</h1>
-    <p>כל האירועים החמים במקום אחד</p>
-</header>
+    <nav>
+        <a href="javascript:void(0);" class="logo">לוגו העסק</a>
+        <ul class="nav-links">
+            <li><a href="javascript:void(0);">בית</a></li>
+            <li><a href="javascript:void(0);">שירותים</a></li>
+            <li><a href="javascript:void(0);">עלינו</a></li>
+            <li><a href="javascript:void(0);">צור קשר</a></li>
+        </ul>
+    </nav>
 
-<div class="container">
+    <section class="hero">
+        <h1>הכירו את העתיד של העסק שלכם</h1>
+        <p>אנחנו עוזרים לחברות ויזמים לבנות מוצרים דיגיטליים מדהימים, להגדיל מכירות ולהגיע לקהל הנכון ביותר עבורם.</p>
+        <a href="javascript:void(0);" class="cta-btn">בואו נתחיל</a>
+    </section>
 
-    <div class="clubs-grid">
+    <section class="container">
+        <h2 class="section-title">השירותים שלנו</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">💻</span>
+                <h3>פיתוח אתרים</h3>
+                <p>בניית אתרים מהירים, מאובטחים ומותאמים אישית לכל סוגי המסכים והדפדפנים.</p>
+            </div>
 
-        <div class="club-card">
-            <img src="images/club1.jpg" class="club-image" alt="מסיבת קיץ במועדון המרכזי">
+            <div class="service-card">
+                <span class="service-icon">🎨</span>
+                <h3>עיצוב חווית משתמש</h3>
+                <p>תכנון ועיצוב ממשקים (UI/UX) מודרניים שגורמים ללקוחות שלכם להתאהב במותג.</p>
+            </div>
 
-            <div class="club-content">
-                <h2 class="club-title">מועדון הביט - תל אביב</h2>
-
-                <p class="club-description">
-                    מסיבת פתיחת הקיץ הרשמית עם הדיג'יים המובילים בארץ. חווית סאונד ותאורה שעוד לא ראיתם. המקומות מוגבלים!
-                </p>
-
-                <div class="info">
-                    <div class="info-item">
-                        <span>📅 תאריך</span>
-                        <span>20/08/2026</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>🕒 שעה</span>
-                        <span>23:00</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>📍 מיקום</span>
-                        <span>תל אביב</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>🔞 גיל כניסה</span>
-                        <span>18+</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>💵 מחיר</span>
-                        <span>80₪</span>
-                    </div>
-                </div>
-
-                <div class="buttons">
-                    <a href="javascript:void(0);" class="btn whatsapp">
-                        WhatsApp
-                    </a>
-
-                    <a href="javascript:void(0);" class="btn booking">
-                        הזמן מקום
-                    </a>
-                </div>
+            <div class="service-card">
+                <span class="service-icon">📈</span>
+                <h3>שיווק דיגיטלי</h3>
+                <p>קידום ממומן ואורגני בגוגל וברשתות החברתיות שיביא לכם לקוחות משלמים בכל יום.</p>
             </div>
         </div>
+    </section>
 
-        <div class="club-card">
-            <img src="images/club2.jpg" class="club-image" alt="אירוע היפ הופ במועדון הצפון">
-
-            <div class="club-content">
-                <h2 class="club-title">מועדון הלופט - חיפה</h2>
-
-                <p class="club-description">
-                    ערב קונספט היפ הופ ומיינסטרים לתוך הלילה. מתחם VIP מפואר, מבצעים מיוחדים על הבר לחוגגים ימי הולדת.
-                </p>
-
-                <div class="info">
-                    <div class="info-item">
-                        <span>📅 תאריך</span>
-                        <span>25/08/2026</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>🕒 שעה</span>
-                        <span>22:30</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>📍 מיקום</span>
-                        <span>חיפה</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>🔞 גיל כניסה</span>
-                        <span>21+</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span>💵 מחיר</span>
-                        <span>100₪</span>
-                    </div>
-                </div>
-
-                <div class="buttons">
-                    <a href="javascript:void(0);" class="btn whatsapp">
-                        WhatsApp
-                    </a>
-
-                    <a href="javascript:void(0);" class="btn booking">
-                        הזמן מקום
-                    </a>
-                </div>
+    <section class="contact-section">
+        <h2 class="section-title">דברו איתנו</h2>
+        
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('הטופס נשלח בהצלחה! (סימולציה)');">
+            <div class="form-group">
+                <label for="name">שם מלא</label>
+                <input type="text" id="name" required placeholder="ישראל ישראלי">
             </div>
-        </div>
+            
+            <div class="form-group">
+                <label for="email">כתובת אימייל</label>
+                <input type="email" id="email" required placeholder="name@example.com">
+            </div>
 
-    </div>
-</div>
+            <div class="form-group">
+                <label for="message">הודעה</label>
+                <textarea id="message" rows="4" required placeholder="איך נוכל לעזור לך?"></textarea>
+            </div>
 
-<footer>
-    © 2026 כל הזכויות שמורות לפורטל האירועים
-</footer>
+            <button type="submit" class="submit-btn">שלח הודעה</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 כל הזכויות שמורות | נבנה עבורך באהבה</p>
+    </footer>
 
 </body>
 </html>
