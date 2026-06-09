@@ -1,139 +1,142 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מועדונים ואירועים</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="פורטל המועדונים והאירועים המוביל בישראל - כרטיסים, מסיבות ואירועים חמים.">
+    <meta name="robots" content="index, follow">
+    <title>מועדונים ואירועים | המסיבות הכי חמות</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Heebo',sans-serif;
-}
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Heebo',sans-serif;
+        }
 
-body{
-    background:#0f172a;
-    color:white;
-}
+        body{
+            background:#0f172a;
+            color:white;
+        }
 
-header{
-    text-align:center;
-    padding:40px 20px;
-    background:linear-gradient(135deg,#7c3aed,#2563eb);
-}
+        header{
+            text-align:center;
+            padding:40px 20px;
+            background:linear-gradient(135deg,#7c3aed,#2563eb);
+        }
 
-header h1{
-    font-size:40px;
-    margin-bottom:10px;
-}
+        header h1{
+            font-size:40px;
+            margin-bottom:10px;
+        }
 
-header p{
-    opacity:0.9;
-}
+        header p{
+            opacity:0.9;
+        }
 
-.container{
-    max-width:1400px;
-    margin:auto;
-    padding:30px;
-}
+        .container{
+            max-width:1400px;
+            margin:auto;
+            padding:30px;
+        }
 
-.clubs-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:25px;
-}
+        .clubs-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+            gap:25px;
+        }
 
-.club-card{
-    background:#1e293b;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
-    transition:0.3s;
-}
+        .club-card{
+            background:#1e293b;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 10px 25px rgba(0,0,0,0.4);
+            transition:0.3s;
+        }
 
-.club-card:hover{
-    transform:translateY(-8px);
-}
+        .club-card:hover{
+            transform:translateY(-8px);
+        }
 
-.club-image{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
+        .club-image{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            background: #334155; /* צבע רקע זמני למקרה שהתמונה לא נטענת */
+        }
 
-.club-content{
-    padding:20px;
-}
+        .club-content{
+            padding:20px;
+        }
 
-.club-title{
-    font-size:28px;
-    margin-bottom:10px;
-}
+        .club-title{
+            font-size:28px;
+            margin-bottom:10px;
+        }
 
-.club-description{
-    color:#cbd5e1;
-    margin-bottom:20px;
-    line-height:1.7;
-}
+        .club-description{
+            color:#cbd5e1;
+            margin-bottom:20px;
+            line-height:1.7;
+        }
 
-.info{
-    display:grid;
-    gap:10px;
-    margin-bottom:20px;
-}
+        .info{
+            display:grid;
+            gap:10px;
+            margin-bottom:20px;
+        }
 
-.info-item{
-    display:flex;
-    justify-content:space-between;
-    background:#334155;
-    padding:10px;
-    border-radius:10px;
-}
+        .info-item{
+            display:flex;
+            justify-content:space-between;
+            background:#334155;
+            padding:10px;
+            border-radius:10px;
+        }
 
-.buttons{
-    display:flex;
-    gap:10px;
-}
+        .buttons{
+            display:flex;
+            gap:10px;
+        }
 
-.btn{
-    flex:1;
-    text-align:center;
-    text-decoration:none;
-    padding:14px;
-    border-radius:12px;
-    font-weight:bold;
-    transition:0.3s;
-}
+        .btn{
+            flex:1;
+            text-align:center;
+            text-decoration:none;
+            padding:14px;
+            border-radius:12px;
+            font-weight:bold;
+            transition:0.3s;
+        }
 
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
+        .whatsapp{
+            background:#25D366;
+            color:white;
+        }
 
-.whatsapp:hover{
-    background:#1ebe5b;
-}
+        .whatsapp:hover{
+            background:#1ebe5b;
+        }
 
-.booking{
-    background:#3b82f6;
-    color:white;
-}
+        .booking{
+            background:#3b82f6;
+            color:white;
+        }
 
-.booking:hover{
-    background:#2563eb;
-}
+        .booking:hover{
+            background:#2563eb;
+        }
 
-footer{
-    text-align:center;
-    padding:30px;
-    margin-top:30px;
-    color:#94a3b8;
-}
-</style>
+        footer{
+            text-align:center;
+            padding:30px;
+            margin-top:30px;
+            color:#94a3b8;
+        }
+    </style>
 </head>
 <body>
 
@@ -146,20 +149,17 @@ footer{
 
     <div class="clubs-grid">
 
-        <!-- מועדון 1 -->
         <div class="club-card">
-            <img src="images/club1.jpg" class="club-image" alt="מועדון">
+            <img src="images/club1.jpg" class="club-image" alt="מסיבת קיץ במועדון המרכזי">
 
             <div class="club-content">
-
-                <h2 class="club-title">שם המועדון</h2>
+                <h2 class="club-title">מועדון הביט - תל אביב</h2>
 
                 <p class="club-description">
-                    כאן תכתוב תיאור קצר על האירוע או המועדון.
+                    מסיבת פתיחת הקיץ הרשמית עם הדיג'יים המובילים בארץ. חווית סאונד ותאורה שעוד לא ראיתם. המקומות מוגבלים!
                 </p>
 
                 <div class="info">
-
                     <div class="info-item">
                         <span>📅 תאריך</span>
                         <span>20/08/2026</span>
@@ -184,39 +184,31 @@ footer{
                         <span>💵 מחיר</span>
                         <span>80₪</span>
                     </div>
-
                 </div>
 
                 <div class="buttons">
-                    <a href="https://chat.whatsapp.com/PUT-YOUR-LINK"
-                       target="_blank"
-                       class="btn whatsapp">
-                       WhatsApp
+                    <a href="javascript:void(0);" class="btn whatsapp">
+                        WhatsApp
                     </a>
 
-                    <a href="#"
-                       class="btn booking">
-                       הזמן מקום
+                    <a href="javascript:void(0);" class="btn booking">
+                        הזמן מקום
                     </a>
                 </div>
-
             </div>
         </div>
 
-        <!-- מועדון 2 -->
         <div class="club-card">
-            <img src="images/club2.jpg" class="club-image" alt="מועדון">
+            <img src="images/club2.jpg" class="club-image" alt="אירוע היפ הופ במועדון הצפון">
 
             <div class="club-content">
-
-                <h2 class="club-title">שם מועדון נוסף</h2>
+                <h2 class="club-title">מועדון הלופט - חיפה</h2>
 
                 <p class="club-description">
-                    תיאור נוסף של האירוע.
+                    ערב קונספט היפ הופ ומיינסטרים לתוך הלילה. מתחם VIP מפואר, מבצעים מיוחדים על הבר לחוגגים ימי הולדת.
                 </p>
 
                 <div class="info">
-
                     <div class="info-item">
                         <span>📅 תאריך</span>
                         <span>25/08/2026</span>
@@ -241,31 +233,25 @@ footer{
                         <span>💵 מחיר</span>
                         <span>100₪</span>
                     </div>
-
                 </div>
 
                 <div class="buttons">
-                    <a href="https://chat.whatsapp.com/PUT-YOUR-LINK"
-                       target="_blank"
-                       class="btn whatsapp">
-                       WhatsApp
+                    <a href="javascript:void(0);" class="btn whatsapp">
+                        WhatsApp
                     </a>
 
-                    <a href="#"
-                       class="btn booking">
-                       הזמן מקום
+                    <a href="javascript:void(0);" class="btn booking">
+                        הזמן מקום
                     </a>
                 </div>
-
             </div>
         </div>
 
     </div>
-
 </div>
 
 <footer>
-    © 2026 כל הזכויות שמורות
+    © 2026 כל הזכויות שמורות לפורטל האירועים
 </footer>
 
 </body>
